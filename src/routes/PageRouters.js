@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Login } from '../views/Login'
 
 const Home = () => (
     <div><h1>Home</h1></div>
@@ -7,12 +8,6 @@ const Home = () => (
 
 const NotFound = () => (
     <div><h1>404</h1></div>
-)
-
-const Login = () => (
-    <div>
-        <h1>login</h1>
-    </div>
 )
 
 const Register = () => (

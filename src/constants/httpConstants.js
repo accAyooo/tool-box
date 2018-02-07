@@ -1,0 +1,11 @@
+
+export const HTTP_CODE = {
+    SUCCESS: 1,
+    ERROR: 0
+}
+
+export const HTTP_STATUS = {
+    SUCCESS: "HTTP_STATUS_SUCCESS",
+    ERROR: "HTTP_STATUS_ERROR",
+    LOADING: "HTTP_STATUS_LOADING"
+}

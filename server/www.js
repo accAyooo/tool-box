@@ -7,8 +7,9 @@ app.get('/user/userinfo', function (req, res) {
      * description 获取用户信息接口
      */
 
+    console.log("getUserinfo");
 
-    var code = 1; //更改code = 1 时会返回登陆成功信息， code=0时返回错误信息
+    var code = 0; //更改code = 1 时会返回登陆成功信息， code=0时返回错误信息
     var errorMessage = "用户未登录";
     var successMessage = "用户已登录";
     var data = {
