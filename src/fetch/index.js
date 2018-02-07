@@ -24,7 +24,7 @@ export function get(url, data) {
     data = data == null ? {} : data;
     let paramStr = obj2params(data);
 
-    return fetch(url + paramStr, {
+    return fetch(url + "?" + paramStr, {
         headers: myHeaders,
         mode: mode,
         credentials: 'include'
