@@ -11,6 +11,7 @@ export default (state = {status: HTTP_STATUS.LOADING}, action) => {
         case FETCH_GET_USERINFO_LOADING:
             return {status: HTTP_STATUS.LOADING};
         case FETCH_GET_USERINFO_SUCCESS:
+            console.log("s")
             return {status: HTTP_STATUS.SUCCESS, result: action.result};
         default:
             return state;

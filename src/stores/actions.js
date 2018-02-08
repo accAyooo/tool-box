@@ -1,5 +1,8 @@
  import { fetchUrl, get } from '../fetch';
-import {HTTP_STATUS} from "../constants/httpConstants";
+ import {
+     FETCH_GET_USERINFO_ERROR, FETCH_GET_USERINFO_LOADING, FETCH_GET_USERINFO_SUCCESS,
+    FETCH_LOGIN_ERROR
+} from "./actionTypes";
 
 export const fetchGetUserinfo = () => {
     const getUserinfoUrl = fetchUrl.USER_INFO_URL;
@@ -7,10 +10,10 @@ export const fetchGetUserinfo = () => {
     return {
         promise: get(getUserinfoUrl).then(response => {
             if (response.status !== 200) {
-                throw new Error("Get userinfo without code 200!");
+                throw new Error("Get userinfo with code " + response.status);
             }
-            return response.json().then(result => result);
+            return response.json().then(result => (result));
         }),
-        types: [HTTP_STATUS.LOADING, HTTP_STATUS.SUCCESS, HTTP_STATUS.ERROR]
+        types: [FETCH_GET_USERINFO_LOADING, FETCH_GET_USERINFO_SUCCESS, FETCH_GET_USERINFO_ERROR]
     }
 }
