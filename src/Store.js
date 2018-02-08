@@ -1,16 +1,16 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { reducer as AppReducer } from './views/App';
-import thunkMiddleware from 'redux-thunk';
 import immutableStateInvariantMiddleware from 'redux-immutable-state-invariant';
+import promiseMiddleware from './middlewares/promise_middleware.js';
+
+import { commonReducers } from './stores/';
 
 const win = window;
 
-const middlewares = [thunkMiddleware];
-
 const Reducer = combineReducers({
-    App: AppReducer
+    common: commonReducers
 });
 
+const middlewares = [promiseMiddleware];
 if (process.env.NODE_ENV !== 'production') {
     middlewares.push(immutableStateInvariantMiddleware());
 }

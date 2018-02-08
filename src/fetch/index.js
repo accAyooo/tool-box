@@ -14,7 +14,7 @@ function obj2params(obj) {
     return result;
 }
 
-export function get(url, data) {
+export const get = (url, data) => {
     let myHeaders = true ? new Headers({
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'text/plain'
@@ -31,15 +31,15 @@ export function get(url, data) {
     });
 }
 
-export function post(url, data) {
-    let myHeaders = new Headers();
-    myHeaders.append('Content-Type', 'application/json');
-    let request = new Request(url, {
-        method: 'POST',
-        mode: 'cors',
-        body:JSON.stringify(data),
-        headers:myHeaders
-    });
-}
+// export function post(url, data) {
+//     let myHeaders = new Headers();
+//     myHeaders.append('Content-Type', 'application/json');
+//     let request = new Request(url, {
+//         method: 'POST',
+//         mode: 'cors',
+//         body:JSON.stringify(data),
+//         headers:myHeaders
+//     });
+// }
 
 export { fetchUrl };
