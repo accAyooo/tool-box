@@ -1,7 +1,6 @@
  import { fetchUrl, get } from '../fetch';
  import {
-     FETCH_GET_USERINFO_ERROR, FETCH_GET_USERINFO_LOADING, FETCH_GET_USERINFO_SUCCESS,
-    FETCH_LOGIN_ERROR
+     FETCH_GET_USERINFO_ERROR, FETCH_GET_USERINFO_LOADING, FETCH_GET_USERINFO_SUCCESS
 } from "./actionTypes";
 
 export const fetchGetUserinfo = () => {
